@@ -1,22 +1,10 @@
+var mongoose = require('mongoose');
+const db = mongoose.connect('mongodb://admin:05354418476Qa@ds131137.mlab.com:31137/heroku_b0lmkm3s')
+const posts = require('../models/posts')
 export const getPosts = () => {
-  return [
-    {
-      title: "1500TL ödül! Sen de yarışmaya katıl!",
-      slug: "yarisma",
-      details: require("./posts/yarisma.md").default,
-      date: "5 Aralık 2019"
-    },
-    {
-      title: "Örnek yazı",
-      slug: "ornek-yazi",
-      details: require("./posts/ornek-yazi.md").default,
-      date: "3 Aralık 2019"
-    },
-    {
-      title: "Merhaba dünya!",
-      slug: "merhaba",
-      details: require("./posts/merhaba.md").default,
-      date: "1 Aralık 2019"
-    }
-  ];
+  var data;
+  posts.find({}, (err, posts) => {
+    data = posts;
+  });
+  return data;
 };
