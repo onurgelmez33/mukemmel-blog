@@ -2,6 +2,7 @@ import React from "react";
 import fetch from "isomorphic-unfetch";
 import Head from "next/head";
 import Link from "next/link";
+import { server } from '../config';
 import ReactMarkdown from "react-markdown";
 import "../public/assets/css/demo.css"
 import "../public/assets/css/search.css"
@@ -66,7 +67,7 @@ const Home = ({ posts }) => (
 );
 
 Home.getInitialProps = async ({ req }) => {
-  const res = await fetch("https://mukemmelblog1.herokuapp.com/api/posts");
+  const res = await fetch(`${server}/api/posts`);
   const json = await res.json();
   return { posts: json };
 };

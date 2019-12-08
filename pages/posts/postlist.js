@@ -1,6 +1,7 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 import Page from '../../layouts/main'
+import { server } from '../config';
 const Home = ({ posts }) => (
     <Page>
         <div class="row">
@@ -47,7 +48,7 @@ const Home = ({ posts }) => (
 );
 
 Home.getInitialProps = async ({ req }) => {
-    const res = await fetch("http://localhost:3000/api/posts");
+    const res = await fetch(`${server}/api/posts`);
     const json = await res.json();
     return { posts: json };
 };
