@@ -1,7 +1,7 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 import Page from '../../layouts/main'
-import { server } from '../config';
+import { server } from '../../config';
 const Home = ({ posts }) => (
   <Page>
     <div class="row">
