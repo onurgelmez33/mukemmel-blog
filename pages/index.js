@@ -66,8 +66,7 @@ const Home = ({ posts }) => (
 );
 
 Home.getInitialProps = async ({ req }) => {
-  // TODO: aşağıdaki satırda bulunan adresi kendi sunucu adresinle değiştirmelisin
-  const res = await fetch("https://mukemmelblog1.herokuapp.com/api/posts");
+  const res = await fetch("http://localhost:3000/api/posts");
   const json = await res.json();
   return { posts: json };
 };

@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const db = mongoose.connect('mongodb://root:147852Qqq@ds131137.mlab.com:31137/heroku_b0lmkm3s')
 const PostsSchema = new mongoose.Schema({
     _id:{
         type: String,
