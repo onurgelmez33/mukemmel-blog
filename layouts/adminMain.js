@@ -49,7 +49,7 @@ export default ({ children }) => (
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="content">
-                                            <a href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#">Çıkış Yap</a>
                                         </div>
                                     </div>
                                 </div>
